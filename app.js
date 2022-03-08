@@ -4,10 +4,10 @@ const searchTemp = () => {
     const city = document.getElementById('city-name').value;
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
     console.log(url);
-    document.getElementById('city-name').value = '';
     fetch(url)
         .then(res => res.json())
         .then(data => displayTemp(data));
+    document.getElementById('city-name').value = '';
 }
 
 const setInnerText = (id, text) => {
